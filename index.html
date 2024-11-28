@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital News Hub: Your source for news, politics, entertainment, technology, and trends.">
+    <title>Digital News Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Container */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: cyan;
+            padding: 1em 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        header .logo h1 {
+            color: black;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        header .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        header .navbar ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 4px 8px;
+            transition: background-color 0.3s;
+        }
+
+        header .navbar ul li a:hover {
+            background-color: red;
+            border-radius: 2px;
+        }
+
+        /* Responsive Search Bar */
+        header .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+            padding: 5px;
+            max-width: 200px;
+            transition: max-width 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        header .search-bar input[type="text"] {
+            border: none;
+            outline: none;
+            font-size: 1em;
+            background: none;
+            color: #333;
+            width: 0;
+            padding: 0 20px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        header .search-bar input[type="text"]:focus {
+            width: 120px;
+        }
+
+        header .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #2980b9;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Main Content Styles */
+        .hero {
+            background-color: #ecf0f1;
+            text-align: center;
+            padding: 2em 0;
+            margin-top: 1em;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.article {
+    flex: 1 1 calc(50% - 20px);
+    padding: 1.5em;
+}
+
+.article h3 {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.article p {
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.article a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+        /* Footer Styles */
+        footer {
+            background-color: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .carousel .slide {
+            flex: 1 0 100%;
+            background-color: magenta;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel .slide:nth-child(even) {
+            background-color: yellow;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 2em;
+        }
+
+        .carousel-control.prev {
+            left: 10px;
+        }
+
+        .carousel-control.next {
+            right: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .articles {
+                flex-direction: column;
+            }
+
+            .article {
+                flex: 1 1 100%;
+            }
+
+            .carousel {
+                flex-direction: column;
+            }
+
+            header .search-bar {
+                max-width: 150px;
+            }
+
+            header .search-bar input[type="text"]:focus {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <h1>Digital News Hub</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="politics.html">Politics</a></li>
+                    <li><a href="entertainment.html">Entertainment</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                    <li><a href="trends.html">Trends</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." aria-label="Search News" id="search-input">
+                <button onclick="search()"><span>&#128269;</span></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="carousel-container">
+        <div class="carousel">
+            <div class="slide">Trending Topic 1: Latest Technology Innovations</div>
+            <div class="slide">Breaking News: Major Political Development</div>
+            <div class="slide">Entertainment: Upcoming Movie Releases</div>
+        </div>
+        <div class="carousel-control prev" onclick="moveCarousel('prev')">&#10094;</div>
+        <div class="carousel-control next" onclick="moveCarousel('next')">&#10095;</div>
+    </section>
+    <main>
+        <section class="hero">
+            <h2>Breaking News and Updates</h2>
+            <p>Stay informed with the latest stories from around the world.</p>
+        </section>
+         
+        <section class="articles">
+            <div class="article">
+				<img src="icc.jpg" width="300px" height="200px">
+				<h3><a href="ICC.html">The ICC confirms its investigation into prosecutor Karim Khan's alleged wrongdoing.</a></h3>
+				
+            </div>
+            <div class="article">
+			<img src="Nigeria.jpg" width="300px" height="200px">
+                <h3><a href="entertainment.html">Nigerian afrobeats stars sure of 2025 Grammy revenge</a></h3>
+            </div>
+            <div class="article">
+			<img src="suspect.jpg" width="300px" height="200px">
+                <h3><a href="suspect.html">Seventh Suspect Arrested in Connection with the Murder of Willis Ayieko</a></h3>
+                
+            </div>
+            <div class="article">
+                <h3>Trending News</h3>
+                <p>What's trending now...</p>
+                <a href="trends.html">Read more</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Digital News Hub | All rights reserved</p>
+    </footer>
+
+    <script>
+        let index = 0;
+
+        function moveCarousel(direction) {
+            const slides = document.querySelectorAll('.carousel .slide');
+            const totalSlides = slides.length;
+
+            if (direction === 'next') {
+                index = (index + 1) % totalSlides;
+            } else if (direction === 'prev') {
+                index = (index - 1 + totalSlides) % totalSlides;
+            }
+
+            document.querySelector('.carousel').style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function search() {
+            const query = document.getElementById('search-input').value;
+            alert('Search for: ' + query); // Example, replace with real search functionality.
+        }
+    </script>
+</body>
+</html>
